@@ -1,0 +1,14 @@
+\subsection{Runway Length Required}
+The minimum length of the runway for the aeroplane to land safely can be calculated by finding the integral of the function $f(t)$ as t ranges from $0 \leq x \leq 26$. 
+
+\begin{align*}
+    \int v(t) dt &= \int_{0}^{9} \frac{96}{0.0828t + 1} dt + \int_{9}^{26}54.2\tan{(1.22-0.0467t)} dt
+    \\
+    %Numbers decimal places have been changed above so below needs to change as well
+    &= \frac{1}{69} 80000\ln{|207x+2500|}\Big|_0^9 -
+    \frac{1}{467}542000\ln{|{\sec{(\frac{467}{10000}t-\frac{61}{50})}})|}\Big|_9^{26}
+    \\ &= 645.65 + 419.05
+    \\ \Aboxed{&=1064.7}
+\end{align*}
+
+Therefore, the total distance covered by the aeroplane is 1060.3m, however because of the many assumptions made the model may still not be accurate enough meaning it would be a much more safer option to make the runway be at least another 300m. Therefore, the minimum runway required should be at least 1.01km

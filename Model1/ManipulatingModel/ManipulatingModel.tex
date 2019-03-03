@@ -1,0 +1,101 @@
+\subsection{Solving the DE}
+We can solve these differential equation through separation of variables:
+
+\textbf{Case 1: }
+From 1 we have:
+
+\begin{align*}
+    -k &= m \frac{dv}{dt}
+    \\ \int -k dt &= \int m dv
+    \\ -kt &= mv + c_1
+    \\ \Aboxed{v &= \frac{-kt - c_1}{m}}
+\end{align*}
+
+\textbf{Case 2:}
+From 2 we have: 
+
+\begin{align*}
+    -k - F_b &= m \frac{dv}{dt}
+    \\ \int -k - F_bdt &= \int mdv
+    \\ -kt - F_b &= mv + c_2
+    \\ \Aboxed{v &= \frac{-kt-F_bt-c_2}{m}}
+\end{align*}
+
+\subsection{Justification of parameters chosen}
+After carefully examining the data, I have chosen that the brakes were applied when t=9s. I choose t=9s to be the time when the brakes were applied as the gradient of the graph seems to decrease drastically after t=9, and this can easily be observed from the change of shape from the graph. From this we can deduce that the initial conditions are:
+%Draw graph to show the gradient decreases rapidly after t=10
+\\ \\
+\textbf{Case 1: } t = 0s, v = 96ms\textsuperscript{-1} and t=9s, v=55ms \textsuperscript{-1}
+\\
+\textbf{Case 2: } t = 9s, v = 55ms\textsuperscript{-1} and t=26s, v=0ms \textsuperscript{-1}
+\\ \\
+So using this, we can see that the first model will give us a function of velocity from 0 to 9s, and model 2 will give us a function of velocity that will model the velocity from 9s until the aeroplane comes to a complete stop, which is at t=26s. Both models use the point (t=9, v=55), as not using this point would result in the graph being discontinuous, and thus not an accurate model of what is happening. Also, having a continuous graph is necessary as it will be crucial when finding the area under the graph in order to find the length of the runway required for the aeroplane.
+
+\subsection{Solutions of the DE}
+\textbf{Case1: } 
+Using the initial conditions, we can find v as a function of t
+\\ \\
+Using the point (t=0, v=96), we see that:
+\begin{center}
+\begin{align*}
+    v &= \frac{-kt - c_1}{m}
+    \\ 96 &= \frac{-c_1}{m}
+    \\ \d c_1 &= -96m
+\end{align*}
+\end{center}
+Using the point (t=9, v=55), we see that:
+\begin{center}
+\begin{align*}
+    v &= \frac{-kt - c_1}{m}
+    \\ 55 &= \frac{-9k+96m}{m}
+    \\ 55m &= -9k + 96
+    \\ 9k &= 41m
+    \\ k &= \frac{41}{9}m
+    \\ &= 4.56m
+\end{align*}
+\end{center}
+
+From this we can deduce that for case 1:
+
+\begin{equation}
+    \boxed{v = -4.56t + 96}
+\end{equation}
+
+\textbf{Case 2: } 
+Using the initial conditions, we can find v as a function of t
+\\ \\
+Using the point (t=9, v=55), we see that:
+\begin{center}
+\begin{align*}
+    v &= \frac{-kt-F_bt-c_2}{m}
+    \\ v &= -\frac{-41t}{9}t - \frac{F_bt - c_2}{m}
+    \\ 55 &= -41 - \frac{9F_b}{m} -\frac{c}{m}
+    \\ 96 &= -\frac{9F_b}{m} - \frac{c_2}{m}
+\end{align*}
+\end{center}
+Using the point (t=26, v=0), we see that:
+\begin{center}
+\begin{align*}
+    v &= \frac{-kt-F_bt-c_2}{m}
+    \\ v &= -\frac{-41t}{9} - \frac{F_bt - c_2}{m}
+    \\ 0 &= -\frac{1066t}{9} - \frac{26F_b}{m} -\frac{c_2}{m}
+\end{align*}
+\end{center}
+\begin{equation}
+     \frac{1066m}{9} = -26F_b - c_2
+\end{equation}
+
+Therefore by solving the simultaneous equation we find:
+\begin{align*}
+    F_b &= -\frac{8080000}{51}
+    \\ &= -158431.3725
+    \\ c_2 &= -\frac{171600000}{17}
+    \\ &= -10094117.65
+\end{align*}
+
+Therefore we can conclude that for case 2:
+\begin{equation}
+    \boxed{v = -3.24t + 84.1}
+\end{equation}
+
+\input{Model1/ManipulatingModel/Predictions.tex}

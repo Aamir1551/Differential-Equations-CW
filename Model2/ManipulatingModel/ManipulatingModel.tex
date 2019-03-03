@@ -1,0 +1,87 @@
+\subsection{Solving the DE}
+We can solve these differential equation through separation of variables:
+
+\textbf{Case 1: }
+From 1 we have:
+
+\begin{align*}
+    -kv &= m \frac{dv}{dt}
+    \\ \int \frac{1}{v} dv &= \int \frac{-k}{m} dt
+    \\ \ln{(v)} &= \frac{-kt}{m} + c_1
+    \\ v &= e^{\frac{-kt}{m} + c_1}
+    \\ \Aboxed{v &= Ae^{\frac{-k}{m}t}}
+\end{align*}
+
+\textbf{Case 2:}
+From 2 we have: 
+
+\begin{align*}
+    -kv - F_b &= m \frac{dv}{dt}
+    \\ \int \frac{1}{-kv - F_b} dv &= \int \frac{1}{m} dt
+    \\ -\frac{1}{k} \ln{(v + \frac{F_b}{k})} &= \frac{t}{m} + c_2
+    \\ - \ln{(v + \frac{F_b}{k})} &= \frac{kt}{m} + c_2
+    \\ v + \frac{F_b}{k} &= e^{-(\frac{kt}{m} + c_2)}
+    \\ v &= e^{-(\frac{kt}{m} + c_2)} - \frac{F_b}{k}
+    \\ \Aboxed{v &= Ae^{-(\frac{k}{m}t)} - \frac{F_b}{k}}
+\end{align*}
+
+\subsection{Solutions of the DE}
+\textbf{Case1: } 
+Using the initial conditions, we can find v as a function of t
+\\ \\
+Using the point (t=0, v=96), we see that:
+\begin{center}
+\begin{align*}
+    v &= Ae^{\frac{-kt}{m}}
+    \\ 96 &= Ae^0
+    \\ A &= 96
+\end{align*}
+\end{center}
+Using the point (t=9, v=55), we see that:
+\begin{center}
+\begin{align*}
+    v &= Ae^{\frac{-kt}{m}}
+    \\ 55 &= 96e^{\frac{-kt}{m}}
+    \\ \frac{55}{96} &= e^{(\frac{-9k}{m})}
+    \\ \ln{(\frac{55}{96})} &= \frac{-9k}{m}
+    \\ k &= -\frac{1}{9}m\ln{(\frac{55}{96})}
+    \\ &= \text{7426.87 $N/ms^{-1}$}
+\end{align*}
+\end{center}
+
+Using the result $k=\frac{k}{m} = 0.0619$ From this we can deduce that for case 1:
+\begin{equation}
+    \boxed{v = 96e^{-0.0619}}
+\end{equation}
+
+\textbf{Case 2: } 
+Using the initial conditions, we can find v as a function of t
+\\ \\
+Using the point (t=9, v=55), we see that:
+\begin{align*}
+    v &= Ae^{-(\frac{kt}{m})} - \frac{F_b}{k}
+    \\ 55 &= Ae^{-(\frac{9k}{m})} - \frac{F_b}{k}
+\end{align*}
+\\
+Using the point (t=26, v=0), we see that:
+
+\begin{center}
+\begin{align*}
+    v &= Ae^{-(\frac{kt}{m})} - \frac{F_b}{k}
+    \\ 0 &= Ae^{-(\frac{26k}{m})} - \frac{F_b}{k}
+\end{align*}
+\end{center}
+
+Therefore by solving the simultaneous equation we find:
+\begin{align*}
+    A &= \frac{40847963}{276821}
+    \\ &= 147.56
+    \\ F_b &= \frac{6069149494577}{27682100}
+    \\ &= 219244.5
+\end{align*}
+Therefore we can conclude that for case 2:
+\begin{equation}
+    \boxed{v = 147.56e^{(-0.0619x)} - 29.5}
+\end{equation}
+
+\input{Model2/ManipulatingModel/Predictions.tex}
